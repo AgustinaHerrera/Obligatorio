@@ -1,0 +1,14 @@
+D:\Baillo\EjemploMenu\Menu\bin\Debug\net8.0\Menu.exe
+D:\Baillo\EjemploMenu\Menu\bin\Debug\net8.0\Menu.deps.json
+D:\Baillo\EjemploMenu\Menu\bin\Debug\net8.0\Menu.runtimeconfig.json
+D:\Baillo\EjemploMenu\Menu\bin\Debug\net8.0\Menu.dll
+D:\Baillo\EjemploMenu\Menu\bin\Debug\net8.0\Menu.pdb
+D:\Baillo\EjemploMenu\Menu\obj\Debug\net8.0\Menu.GeneratedMSBuildEditorConfig.editorconfig
+D:\Baillo\EjemploMenu\Menu\obj\Debug\net8.0\Menu.AssemblyInfoInputs.cache
+D:\Baillo\EjemploMenu\Menu\obj\Debug\net8.0\Menu.AssemblyInfo.cs
+D:\Baillo\EjemploMenu\Menu\obj\Debug\net8.0\Menu.csproj.CoreCompileInputs.cache
+D:\Baillo\EjemploMenu\Menu\obj\Debug\net8.0\Menu.dll
+D:\Baillo\EjemploMenu\Menu\obj\Debug\net8.0\refint\Menu.dll
+D:\Baillo\EjemploMenu\Menu\obj\Debug\net8.0\Menu.pdb
+D:\Baillo\EjemploMenu\Menu\obj\Debug\net8.0\Menu.genruntimeconfig.cache
+D:\Baillo\EjemploMenu\Menu\obj\Debug\net8.0\ref\Menu.dll
