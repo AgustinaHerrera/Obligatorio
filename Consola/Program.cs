@@ -3,13 +3,16 @@ using Dominio;
 
 namespace Menu
 {
+    
     internal class Program
     {
+        private static Sistema miSistema;
+
         static void Main(string[] args)
         {
             string opcion = "";
-            Sistema sistema = new Sistema(); // Instancia de la clase Sistema
-
+            miSistema = new Sistema();
+            
             while (opcion != "0")
             {
                 MostrarMenu();
@@ -18,16 +21,16 @@ namespace Menu
                 switch (opcion)
                 {
                     case "1":
-                        ListadoDeClientes(sistema);
+                        ListadoDeClientes();
                         break;
                     case "2":
-                        Categorias(sistema);
+                        Categorias();
                         break;
                     case "3":
-                        AltaDeArticulos(sistema);
+                        AltaDeArticulos();
                         break;
                     case "4":
-                        PublicacionesPorFecha(sistema);
+                        PublicacionesPorFecha();
                         break;
                     case "0":
                         Console.Clear();
@@ -57,37 +60,44 @@ namespace Menu
             Console.WriteLine("0 - Salir");
         }
 
- static void ListadoDeClientes(Sistema sistema)
+        static void ListadoDeClientes()
         {
             Console.Clear();
             CambioDeColor("OPCIÓN: Listado de clientes", ConsoleColor.Yellow);
             Console.WriteLine();
 
-            var clientes = sistema.ObtenerClientes(); 
-            foreach (var cliente in clientes)
+            List<Cliente> clientes = miSistema.ObtenerClientes();
+            try
             {
-                Console.WriteLine($"ID: {cliente.Id}, Nombre: {cliente.Nombre}, Saldo: {cliente.Saldo}");
+                foreach (Cliente c in clientes)
+                {
+                    Console.WriteLine(c.ToString());
+                }
             }
-
+            catch (Exception ex)
+            {
+                MostrarError (ex.Message);
+            }
+            
             PressToContinue();
         }
 
-        static void Categorias(Sistema sistema)
+        static void Categorias()
         {
             Console.Clear();
             CambioDeColor("OPCIÓN: Categorías", ConsoleColor.Yellow);
             Console.WriteLine("Mostrar categorías disponibles...");
 
-            var articulos = sistema.ObtenerArticulos(); 
-            foreach (var articulo in articulos)
+            List<Articulo> articulos = miSistema.ObtenerArticulos(); 
+            foreach (Articulo a in articulos)
             {
-                Console.WriteLine($"Categoría: {articulo.Categoria}");
+                Console.WriteLine($"Categoría: {a.Categoria}");
             }
 
             PressToContinue();
         }
 
-        static void AltaDeArticulos(Sistema sistema)
+        static void AltaDeArticulos()
         {
             Console.Clear();
             CambioDeColor("OPCIÓN: Alta de artículos", ConsoleColor.Yellow);
@@ -99,12 +109,12 @@ namespace Menu
             double precioVenta = PedirNumeros("Precio: ");
 
             Articulo nuevoArticulo = new Articulo(nombre, categoria, precioVenta);
-            sistema.AgregarArticulo(nuevoArticulo); 
+            miSistema.AgregarArticulo(nuevoArticulo); 
             MostrarExito("Artículo agregado correctamente.");
             PressToContinue();
         }
 
-        static void PublicacionesPorFecha(Sistema sistema)
+        static void PublicacionesPorFecha()
         {
             Console.Clear();
             CambioDeColor("OPCIÓN: Publicaciones por fecha", ConsoleColor.Yellow);
@@ -114,11 +124,11 @@ namespace Menu
             DateTime fechaFin = DateTime.Parse(Console.ReadLine());
 
             Console.WriteLine($"Publicaciones entre {fechaInicio.ToShortDateString()} y {fechaFin.ToShortDateString()}:");
-            var publicaciones = sistema.ObtenerPublicacionesPorFecha(fechaInicio, fechaFin);
+            List<Publicacion> publicaciones = miSistema.ObtenerPublicacionesPorFecha(fechaInicio, fechaFin);
 
-            foreach (var publicacion in publicaciones)
+            foreach (Publicacion p in publicaciones)
             {
-                Console.WriteLine($"ID: {publicacion.Id}, Nombre: {publicacion.Nombre}, Estado: {publicacion.estado}, Fecha: {publicacion.FechaPublicacion}");
+                Console.WriteLine($"ID: {p.Id}, Nombre: {p.Nombre}, Estado: {p.estado}, Fecha: {p.FechaPublicacion}");
             }
 
             PressToContinue();

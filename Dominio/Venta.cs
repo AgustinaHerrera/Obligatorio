@@ -4,8 +4,8 @@ namespace Dominio
     {
         private bool _ofertaRelampago;
 
-        public Venta(string nombre, List<Articulo> articulos, bool ofertaRelampago) 
-            : base(nombre, Dominio.Estado.ABIERTA, articulos)
+        public Venta(string nombre, List<Articulo> articulos, bool ofertaRelampago, DateTime fechaPublicacion) 
+            : base(nombre, Estado.ABIERTA, articulos,  fechaPublicacion)
         {
             _ofertaRelampago = ofertaRelampago;
         }

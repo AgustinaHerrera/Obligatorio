@@ -16,3 +16,4 @@
 /Users/agustinaherreraperez/Library/Mobile Documents/com~apple~CloudDocs/ATI/Semestre 2/Programación 2/Obligatorio/Consola/obj/Debug/net8.0/Consola.pdb
 /Users/agustinaherreraperez/Library/Mobile Documents/com~apple~CloudDocs/ATI/Semestre 2/Programación 2/Obligatorio/Consola/obj/Debug/net8.0/Consola.genruntimeconfig.cache
 /Users/agustinaherreraperez/Library/Mobile Documents/com~apple~CloudDocs/ATI/Semestre 2/Programación 2/Obligatorio/Consola/obj/Debug/net8.0/ref/Consola.dll
+/Users/agustinaherreraperez/Library/Mobile Documents/com~apple~CloudDocs/ATI/Semestre 2/Programación 2/Obligatorio/Consola/obj/Debug/net8.0/Consola.sourcelink.json

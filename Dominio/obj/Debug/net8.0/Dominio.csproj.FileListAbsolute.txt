@@ -9,3 +9,4 @@
 /Users/agustinaherreraperez/Library/Mobile Documents/com~apple~CloudDocs/ATI/Semestre 2/Programación 2/Obligatorio/Dominio/obj/Debug/net8.0/refint/Dominio.dll
 /Users/agustinaherreraperez/Library/Mobile Documents/com~apple~CloudDocs/ATI/Semestre 2/Programación 2/Obligatorio/Dominio/obj/Debug/net8.0/Dominio.pdb
 /Users/agustinaherreraperez/Library/Mobile Documents/com~apple~CloudDocs/ATI/Semestre 2/Programación 2/Obligatorio/Dominio/obj/Debug/net8.0/ref/Dominio.dll
+/Users/agustinaherreraperez/Library/Mobile Documents/com~apple~CloudDocs/ATI/Semestre 2/Programación 2/Obligatorio/Dominio/obj/Debug/net8.0/Dominio.sourcelink.json

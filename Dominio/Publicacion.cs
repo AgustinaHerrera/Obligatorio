@@ -9,18 +9,17 @@ namespace Dominio
         private DateTime _fechaPublicacion;
         internal List<Articulo> _articulos;
         private Cliente _comprador;  
-        private Usuario _usuarioFinalizador; 
-       
+        private Usuario _usuarioFinalizador;
 
-        public Publicacion(string nombre, Estado estado, List<Articulo> articulos)
+        public Publicacion(string nombre, Estado estado, List<Articulo> articulos, DateTime fechaPublicacion)
         {
             _id = s_ultId++;
             _nombre = nombre;
-            _fechaPublicacion = DateTime.Now;
+            _fechaPublicacion = fechaPublicacion;
             _articulos = articulos;
-            _estado = Dominio.Estado.ABIERTA;
+            _estado = estado;
         }
-        
+
         public Estado estado
         {
             get { return _estado; }
@@ -40,5 +39,6 @@ namespace Dominio
         {
             get { return _nombre; }
         }
+        
     }
 }

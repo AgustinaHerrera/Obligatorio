@@ -37,5 +37,12 @@ namespace Dominio
             base.Validar();
             if (_saldoDisponible < 0) throw new Exception("El saldo no puede ser negativo");
         }
+        
+        public override string ToString()
+        {
+            return $"ID: {_id}, Nombre: {_nombre}, Saldo: {_saldoDisponible}"; 
+        }
+        
     }
+    
 }
