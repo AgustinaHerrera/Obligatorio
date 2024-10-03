@@ -88,10 +88,17 @@ namespace Menu
             CambioDeColor("OPCIÓN: Categorías", ConsoleColor.Yellow);
             Console.WriteLine("Mostrar categorías disponibles...");
 
-            List<Articulo> articulos = miSistema.ObtenerArticulos(); 
-            foreach (Articulo a in articulos)
+            List<Articulo> articulos = miSistema.ObtenerArticulos();
+            try
             {
-                Console.WriteLine($"Categoría: {a.Categoria}");
+                foreach (Articulo a in articulos)
+                {
+                    Console.WriteLine($"Categoría: {a.Categoria}");
+                }
+            }
+            catch (Exception ex)
+            {
+                MostrarError (ex.Message);
             }
 
             PressToContinue();
@@ -107,10 +114,16 @@ namespace Menu
             string categoria = Console.ReadLine();
             Console.Write("Ingrese el precio de venta del artículo: ");
             double precioVenta = PedirNumeros("Precio: ");
-
-            Articulo nuevoArticulo = new Articulo(nombre, categoria, precioVenta);
-            miSistema.AgregarArticulo(nuevoArticulo); 
-            MostrarExito("Artículo agregado correctamente.");
+            try
+            {
+                Articulo nuevoArticulo = new Articulo(nombre, categoria, precioVenta);
+                miSistema.AgregarArticulo(nuevoArticulo); 
+                MostrarExito("Artículo agregado correctamente.");
+            }
+            catch (Exception ex)
+            {
+                MostrarError (ex.Message);
+            }
             PressToContinue();
         }
 
@@ -125,12 +138,18 @@ namespace Menu
 
             Console.WriteLine($"Publicaciones entre {fechaInicio.ToShortDateString()} y {fechaFin.ToShortDateString()}:");
             List<Publicacion> publicaciones = miSistema.ObtenerPublicacionesPorFecha(fechaInicio, fechaFin);
-
-            foreach (Publicacion p in publicaciones)
+            try
             {
-                Console.WriteLine($"ID: {p.Id}, Nombre: {p.Nombre}, Estado: {p.estado}, Fecha: {p.FechaPublicacion}");
+                foreach (Publicacion p in publicaciones)
+                {
+                  if(p !=  null)  Console.WriteLine($"ID: {p.Id}, Nombre: {p.Nombre}, Estado: {p.estado}, Fecha: {p.FechaPublicacion}");
+                }
+                CambioDeColor("No hay publicaciones en el rango de fechas", ConsoleColor.Red) ;
             }
-
+            catch (Exception ex)
+            {
+                MostrarError (ex.Message);
+            }
             PressToContinue();
         }
 
