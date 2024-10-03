@@ -232,18 +232,11 @@ namespace Dominio
         public void AgregarOfertaASubasta(int idSubasta, int idOferta, double montoOferta)
         {
             Subasta subastaBuscada = ObtenerSubastaPorId(idSubasta);
-    
-            if (subastaBuscada == null)
-            {
-                throw new Exception("El id de subasta no corresponde a ninguna subasta del sistema");
-            }
+            if (subastaBuscada == null) throw new Exception("El id de subasta no corresponde a ninguna subasta del sistema");
 
             Oferta ofertaBuscada = ObtenerOfertaPorId(idOferta);
     
-            if (ofertaBuscada == null)
-            {
-                throw new Exception("La oferta no se encontró");
-            }
+            if (ofertaBuscada == null) throw new Exception("La oferta no se encontró");
             
             OfertaSubasta os = new OfertaSubasta(ofertaBuscada.Cliente, montoOferta);
             subastaBuscada.AltaOferta(os); 
