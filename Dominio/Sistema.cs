@@ -16,9 +16,11 @@ namespace Dominio
             PrecargaClientes();
             PrecargaAdministradores();
             PrecargaArticulos();
+            /*
             PrecargaVentas();
             PrecargaSubastas();
             PrecargaOfertas();
+            */
         }
 
         // Artículos
@@ -159,6 +161,7 @@ namespace Dominio
             }
         }
 
+        /*
         private void PrecargaVentas()
         {
              List<Articulo> articulosVenta1 = new List<Articulo> { _articulos[0], _articulos[1] }; // Camiseta y Pantalón
@@ -213,8 +216,7 @@ namespace Dominio
             AgregarPublicacion(new Subasta("Subasta 10", articulosSubasta10, new DateTime(2024, 09, 24)));
         }
         
-        
-        //NO VA PARA ESTA ENTREGA
+        */
         public Subasta ObtenerSubastaPorId(int id)
         {
             foreach (Subasta s in _subastas)
@@ -229,7 +231,6 @@ namespace Dominio
         }
         
         
-        //NO VA PARA ESTA ENTREGA
             public Oferta ObtenerOfertaPorId(int id)
         {
             Oferta buscado = null;
@@ -243,9 +244,6 @@ namespace Dominio
             return buscado;
         }
             
-            
-
-            //NO VA PARA ESTA ENTREGA
         public void AgregarOfertaASubasta(int idSubasta, int idOferta, double montoOferta)
         {
             Subasta subastaBuscada = ObtenerSubastaPorId(idSubasta);
@@ -255,15 +253,15 @@ namespace Dominio
     
             if (ofertaBuscada == null) throw new Exception("La oferta no se encontró");
             
-            OfertaSubasta os = new OfertaSubasta(ofertaBuscada.Cliente, montoOferta);
+            Oferta os = new Oferta(ofertaBuscada.Cliente, montoOferta);
             subastaBuscada.AltaOferta(os); 
         }
-
+/*
         private void PrecargaOfertas()
         {
             // Crear las ofertas
-            Oferta oferta1 = new OfertaSubasta(_clientes[0], 100);
-            Oferta oferta2 = new OfertaSubasta(_clientes[2], 150);
+            Oferta oferta1 = new Oferta(_clientes[0], 100);
+            Oferta oferta2 = new Oferta(_clientes[2], 150);
     
             // Agregar las ofertas al sistema antes de usarlas
             _ofertas.Add(oferta1);
@@ -273,6 +271,7 @@ namespace Dominio
             AgregarOfertaASubasta(12, oferta1.Id, oferta1.Monto); 
             AgregarOfertaASubasta(14, oferta2.Id, oferta2.Monto);
         }
+*/
 
         public List<Publicacion> ObtenerPublicacionesPorFecha(DateTime inicio, DateTime fin)
         {

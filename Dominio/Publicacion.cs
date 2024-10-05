@@ -10,9 +10,10 @@ namespace Dominio
         private Estado _estado;
         private DateTime _fechaPublicacion;
         internal List<Articulo> _articulos;
-        private Cliente _comprador;  
+        private Cliente _comprador;
+        private DateTime _fechaFinalizacion;
 
-        public Publicacion(string nombre, Estado estado, List<Articulo> articulos, DateTime fechaPublicacion)
+        public Publicacion(string nombre, Estado estado, List<Articulo> articulos, DateTime fechaPublicacion, Cliente comprador, DateTime fechaFinalizacion)
         {
             _id = s_ultId++;
             _nombre = nombre;

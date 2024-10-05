@@ -7,7 +7,7 @@ namespace Dominio
         private Cliente _cliente;
         private double _monto;
         private DateTime _fechaOferta;
-        private List<OfertaSubasta> _ofertaSubastas = new List<OfertaSubasta>();
+        private List<Oferta> _ofertaSubastas = new List<Oferta>();
 
         public Oferta(Cliente cliente, double monto)
         {

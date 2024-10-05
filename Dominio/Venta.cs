@@ -5,8 +5,8 @@ namespace Dominio
         private bool _ofertaRelampago;
         private Cliente _usuarioFinalizador;
 
-        public Venta(string nombre, List<Articulo> articulos, bool ofertaRelampago, DateTime fechaPublicacion) 
-            : base(nombre, Estado.ABIERTA, articulos,  fechaPublicacion)
+        public Venta(string nombre, List<Articulo> articulos, bool ofertaRelampago, DateTime fechaPublicacion, Cliente comprador, DateTime fechaFinalizacion, Cliente usuarioFinalizador) 
+            : base(nombre, Estado.ABIERTA, articulos, fechaPublicacion, comprador, fechaFinalizacion)
         {
             _ofertaRelampago = ofertaRelampago;
         }
@@ -25,8 +25,7 @@ namespace Dominio
                 double descuento = total * 0.2;
                 total -= descuento; 
             }
-
-
+            
             return total;
         }
         

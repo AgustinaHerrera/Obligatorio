@@ -2,20 +2,19 @@ namespace Dominio
 {
     public class Subasta : Publicacion
     {
-        private List<Oferta> _ofertas;
-        private List<OfertaSubasta> _ofertaSubastas = new List<OfertaSubasta>();
+        private List<Oferta> _oferta = new List<Oferta>();
         private Administrador _usuarioFinalizador;
 
-        public Subasta(string nombre, List<Articulo> articulos, DateTime fechaPublicacion) 
-            : base(nombre, Estado.ABIERTA, articulos, fechaPublicacion)// Inicializa en estado ABIERTA
+        public Subasta(string nombre, List<Articulo> articulos, DateTime fechaPublicacion, Cliente comprador, DateTime fechaFinalizacion, Administrador usuarioFinalizador) 
+            : base(nombre, Estado.ABIERTA, articulos, fechaPublicacion, comprador, fechaFinalizacion)// Inicializa en estado ABIERTA
         {
-            _ofertas = new List<Oferta>();
+            _oferta = new List<Oferta>();
             
         }
 
         public List<Oferta> ObtenerOfertas()
         {
-            return _ofertas;
+            return _oferta;
         }
 
         //NO VA PRIMERA ENTREGA
@@ -27,7 +26,7 @@ namespace Dominio
             }
 
             oferta.Validar();  
-            _ofertas.Add(oferta);
+            _oferta.Add(oferta);
         }
         
         //NO VA PRIMERA ENTREGA
@@ -42,13 +41,13 @@ namespace Dominio
             throw new NotImplementedException();
         }
 
-        //NO VA PRIMERA ENTREGA
-        public void AltaOferta(OfertaSubasta os)
+        
+        public void AltaOferta(Oferta o)
         {
-            if (os == null) throw new Exception("La oferta no puede ser nula");
-            if (_ofertas.Contains(os)) throw new Exception("Ya existe la oferta en la subasta");
+            if (o == null) throw new Exception("La oferta no puede ser nula");
+            if (_oferta.Contains(o)) throw new Exception("Ya existe la oferta en la subasta");
     
-            _ofertas.Add(os); 
+            _oferta.Add(o); 
         }
     }
 }
