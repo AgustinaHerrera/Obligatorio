@@ -31,6 +31,7 @@ namespace Dominio
         {
             get { return _fechaPublicacion; }
         }
+        
 
         public int Id
         {
