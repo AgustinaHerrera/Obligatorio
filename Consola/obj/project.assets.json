@@ -27,19 +27,19 @@
     ]
   },
   "packageFolders": {
-    "/Users/agustinaherreraperez/.nuget/packages/": {}
+    "/Users/danielaarsuaga/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/agustinaherreraperez/Library/Mobile Documents/com~apple~CloudDocs/ATI/Semestre 2/Programación 2/Obligatorio/Consola/Consola.csproj",
+      "projectUniqueName": "/Users/danielaarsuaga/Desktop/ORT/Programacion 2/Obligatorio/Obligatorio/Consola/Consola.csproj",
       "projectName": "Consola",
-      "projectPath": "/Users/agustinaherreraperez/Library/Mobile Documents/com~apple~CloudDocs/ATI/Semestre 2/Programación 2/Obligatorio/Consola/Consola.csproj",
-      "packagesPath": "/Users/agustinaherreraperez/.nuget/packages/",
-      "outputPath": "/Users/agustinaherreraperez/Library/Mobile Documents/com~apple~CloudDocs/ATI/Semestre 2/Programación 2/Obligatorio/Consola/obj/",
+      "projectPath": "/Users/danielaarsuaga/Desktop/ORT/Programacion 2/Obligatorio/Obligatorio/Consola/Consola.csproj",
+      "packagesPath": "/Users/danielaarsuaga/.nuget/packages/",
+      "outputPath": "/Users/danielaarsuaga/Desktop/ORT/Programacion 2/Obligatorio/Obligatorio/Consola/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/agustinaherreraperez/.nuget/NuGet/NuGet.Config"
+        "/Users/danielaarsuaga/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -51,8 +51,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "/Users/agustinaherreraperez/Library/Mobile Documents/com~apple~CloudDocs/ATI/Semestre 2/Programación 2/Obligatorio/Dominio/Dominio.csproj": {
-              "projectPath": "/Users/agustinaherreraperez/Library/Mobile Documents/com~apple~CloudDocs/ATI/Semestre 2/Programación 2/Obligatorio/Dominio/Dominio.csproj"
+            "/Users/danielaarsuaga/Desktop/ORT/Programacion 2/Obligatorio/Obligatorio/Dominio/Dominio.csproj": {
+              "projectPath": "/Users/danielaarsuaga/Desktop/ORT/Programacion 2/Obligatorio/Obligatorio/Dominio/Dominio.csproj"
             }
           }
         }
@@ -87,7 +87,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/Users/agustinaherreraperez/.dotnet/sdk/8.0.303/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.401/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

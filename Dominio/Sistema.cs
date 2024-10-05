@@ -14,16 +14,17 @@ namespace Dominio
         public Sistema()
         {
             PrecargaClientes();
-            precargaAdministradores();
+            PrecargaAdministradores();
             PrecargaArticulos();
-            precargaVentas();
-            precargaSubastas();
+            PrecargaVentas();
+            PrecargaSubastas();
             PrecargaOfertas();
         }
 
         // Artículos
         public void AgregarArticulo(Articulo articulo)
         {
+            if (articulo == null) throw new Exception("El articulo no puede ser nulo");
             articulo.Validar();
             _articulos.Add(articulo);
         }
@@ -100,6 +101,7 @@ namespace Dominio
         //Clientes
         private void AgregarCliente(Cliente cliente)
         {
+            if (cliente == null) throw new Exception("El cliente no puede ser nulo");
             cliente.Validar();
             _clientes.Add(cliente);
         }
@@ -129,21 +131,27 @@ namespace Dominio
         //Administradores
         public void AgregarAdministrador(Administrador administrador)
         {
+            if (administrador == null) throw new Exception("El administrador no puede ser nulo");
             administrador.Validar();
             _administradores.Add(administrador);
         }
 
-        private void precargaAdministradores()
+        private void PrecargaAdministradores()
         {
             {
                 AgregarAdministrador(new Administrador("Laura", "Salazar", "laura.salazar@gmail.com", "admin123"));
                 AgregarAdministrador(new Administrador("Felipe", "Jiménez", "felipe.jimenez@hotmail.com", "admin456"));
             }
         }
+        
+        
 
         //Ventas
         public void AgregarPublicacion(Publicacion publicacion)
         {
+            
+            if (publicacion == null) throw new Exception("La publicacion no puede ser nula");
+            publicacion.Validar();
             _publicaciones.Add(publicacion);
             if (publicacion is Subasta subasta)
             {
@@ -151,7 +159,7 @@ namespace Dominio
             }
         }
 
-        private void precargaVentas()
+        private void PrecargaVentas()
         {
              List<Articulo> articulosVenta1 = new List<Articulo> { _articulos[0], _articulos[1] }; // Camiseta y Pantalón
              List<Articulo> articulosVenta2 = new List<Articulo> { _articulos[2], _articulos[3] }; // Chaqueta y Zapatos
@@ -178,8 +186,9 @@ namespace Dominio
         }
 
         //Subastas
-        private void precargaSubastas()
+        private void PrecargaSubastas()
         {
+            
             List<Articulo> articulosSubasta1 = new List<Articulo> { _articulos[0], _articulos[1] };
             List<Articulo> articulosSubasta2 = new List<Articulo> { _articulos[2], _articulos[3] };
             List<Articulo> articulosSubasta3 = new List<Articulo> { _articulos[4], _articulos[5] };
@@ -190,6 +199,7 @@ namespace Dominio
             List<Articulo> articulosSubasta8 = new List<Articulo> { _articulos[4], _articulos[6] };
             List<Articulo> articulosSubasta9 = new List<Articulo> { _articulos[5], _articulos[7] };
             List<Articulo> articulosSubasta10 = new List<Articulo> { _articulos[8], _articulos[9] };
+            
 
             AgregarPublicacion(new Subasta("Subasta 1", articulosSubasta1, new DateTime(2024, 09, 15)));
             AgregarPublicacion(new Subasta("Subasta 2", articulosSubasta2, new DateTime(2024, 09, 16)));
@@ -203,6 +213,8 @@ namespace Dominio
             AgregarPublicacion(new Subasta("Subasta 10", articulosSubasta10, new DateTime(2024, 09, 24)));
         }
         
+        
+        //NO VA PARA ESTA ENTREGA
         public Subasta ObtenerSubastaPorId(int id)
         {
             foreach (Subasta s in _subastas)
@@ -216,6 +228,8 @@ namespace Dominio
             return null; // Si no encuentra, regresa null
         }
         
+        
+        //NO VA PARA ESTA ENTREGA
             public Oferta ObtenerOfertaPorId(int id)
         {
             Oferta buscado = null;
@@ -228,7 +242,10 @@ namespace Dominio
 
             return buscado;
         }
+            
+            
 
+            //NO VA PARA ESTA ENTREGA
         public void AgregarOfertaASubasta(int idSubasta, int idOferta, double montoOferta)
         {
             Subasta subastaBuscada = ObtenerSubastaPorId(idSubasta);

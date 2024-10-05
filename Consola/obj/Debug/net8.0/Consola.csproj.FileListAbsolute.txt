@@ -17,3 +17,22 @@
 /Users/agustinaherreraperez/Library/Mobile Documents/com~apple~CloudDocs/ATI/Semestre 2/Programación 2/Obligatorio/Consola/obj/Debug/net8.0/Consola.genruntimeconfig.cache
 /Users/agustinaherreraperez/Library/Mobile Documents/com~apple~CloudDocs/ATI/Semestre 2/Programación 2/Obligatorio/Consola/obj/Debug/net8.0/ref/Consola.dll
 /Users/agustinaherreraperez/Library/Mobile Documents/com~apple~CloudDocs/ATI/Semestre 2/Programación 2/Obligatorio/Consola/obj/Debug/net8.0/Consola.sourcelink.json
+/Users/danielaarsuaga/Desktop/ORT/Programacion 2/Obligatorio/Obligatorio/Consola/bin/Debug/net8.0/Consola
+/Users/danielaarsuaga/Desktop/ORT/Programacion 2/Obligatorio/Obligatorio/Consola/bin/Debug/net8.0/Consola.deps.json
+/Users/danielaarsuaga/Desktop/ORT/Programacion 2/Obligatorio/Obligatorio/Consola/bin/Debug/net8.0/Consola.runtimeconfig.json
+/Users/danielaarsuaga/Desktop/ORT/Programacion 2/Obligatorio/Obligatorio/Consola/bin/Debug/net8.0/Consola.dll
+/Users/danielaarsuaga/Desktop/ORT/Programacion 2/Obligatorio/Obligatorio/Consola/bin/Debug/net8.0/Consola.pdb
+/Users/danielaarsuaga/Desktop/ORT/Programacion 2/Obligatorio/Obligatorio/Consola/bin/Debug/net8.0/Dominio.dll
+/Users/danielaarsuaga/Desktop/ORT/Programacion 2/Obligatorio/Obligatorio/Consola/bin/Debug/net8.0/Dominio.pdb
+/Users/danielaarsuaga/Desktop/ORT/Programacion 2/Obligatorio/Obligatorio/Consola/obj/Debug/net8.0/Consola.csproj.AssemblyReference.cache
+/Users/danielaarsuaga/Desktop/ORT/Programacion 2/Obligatorio/Obligatorio/Consola/obj/Debug/net8.0/Consola.GeneratedMSBuildEditorConfig.editorconfig
+/Users/danielaarsuaga/Desktop/ORT/Programacion 2/Obligatorio/Obligatorio/Consola/obj/Debug/net8.0/Consola.AssemblyInfoInputs.cache
+/Users/danielaarsuaga/Desktop/ORT/Programacion 2/Obligatorio/Obligatorio/Consola/obj/Debug/net8.0/Consola.AssemblyInfo.cs
+/Users/danielaarsuaga/Desktop/ORT/Programacion 2/Obligatorio/Obligatorio/Consola/obj/Debug/net8.0/Consola.csproj.CoreCompileInputs.cache
+/Users/danielaarsuaga/Desktop/ORT/Programacion 2/Obligatorio/Obligatorio/Consola/obj/Debug/net8.0/Consola.sourcelink.json
+/Users/danielaarsuaga/Desktop/ORT/Programacion 2/Obligatorio/Obligatorio/Consola/obj/Debug/net8.0/Consola.csproj.Up2Date
+/Users/danielaarsuaga/Desktop/ORT/Programacion 2/Obligatorio/Obligatorio/Consola/obj/Debug/net8.0/Consola.dll
+/Users/danielaarsuaga/Desktop/ORT/Programacion 2/Obligatorio/Obligatorio/Consola/obj/Debug/net8.0/refint/Consola.dll
+/Users/danielaarsuaga/Desktop/ORT/Programacion 2/Obligatorio/Obligatorio/Consola/obj/Debug/net8.0/Consola.pdb
+/Users/danielaarsuaga/Desktop/ORT/Programacion 2/Obligatorio/Obligatorio/Consola/obj/Debug/net8.0/Consola.genruntimeconfig.cache
+/Users/danielaarsuaga/Desktop/ORT/Programacion 2/Obligatorio/Obligatorio/Consola/obj/Debug/net8.0/ref/Consola.dll

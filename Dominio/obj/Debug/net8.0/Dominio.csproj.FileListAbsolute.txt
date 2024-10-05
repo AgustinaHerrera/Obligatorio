@@ -10,3 +10,15 @@
 /Users/agustinaherreraperez/Library/Mobile Documents/com~apple~CloudDocs/ATI/Semestre 2/Programación 2/Obligatorio/Dominio/obj/Debug/net8.0/Dominio.pdb
 /Users/agustinaherreraperez/Library/Mobile Documents/com~apple~CloudDocs/ATI/Semestre 2/Programación 2/Obligatorio/Dominio/obj/Debug/net8.0/ref/Dominio.dll
 /Users/agustinaherreraperez/Library/Mobile Documents/com~apple~CloudDocs/ATI/Semestre 2/Programación 2/Obligatorio/Dominio/obj/Debug/net8.0/Dominio.sourcelink.json
+/Users/danielaarsuaga/Desktop/ORT/Programacion 2/Obligatorio/Obligatorio/Dominio/bin/Debug/net8.0/Dominio.deps.json
+/Users/danielaarsuaga/Desktop/ORT/Programacion 2/Obligatorio/Obligatorio/Dominio/bin/Debug/net8.0/Dominio.dll
+/Users/danielaarsuaga/Desktop/ORT/Programacion 2/Obligatorio/Obligatorio/Dominio/bin/Debug/net8.0/Dominio.pdb
+/Users/danielaarsuaga/Desktop/ORT/Programacion 2/Obligatorio/Obligatorio/Dominio/obj/Debug/net8.0/Dominio.GeneratedMSBuildEditorConfig.editorconfig
+/Users/danielaarsuaga/Desktop/ORT/Programacion 2/Obligatorio/Obligatorio/Dominio/obj/Debug/net8.0/Dominio.AssemblyInfoInputs.cache
+/Users/danielaarsuaga/Desktop/ORT/Programacion 2/Obligatorio/Obligatorio/Dominio/obj/Debug/net8.0/Dominio.AssemblyInfo.cs
+/Users/danielaarsuaga/Desktop/ORT/Programacion 2/Obligatorio/Obligatorio/Dominio/obj/Debug/net8.0/Dominio.csproj.CoreCompileInputs.cache
+/Users/danielaarsuaga/Desktop/ORT/Programacion 2/Obligatorio/Obligatorio/Dominio/obj/Debug/net8.0/Dominio.sourcelink.json
+/Users/danielaarsuaga/Desktop/ORT/Programacion 2/Obligatorio/Obligatorio/Dominio/obj/Debug/net8.0/Dominio.dll
+/Users/danielaarsuaga/Desktop/ORT/Programacion 2/Obligatorio/Obligatorio/Dominio/obj/Debug/net8.0/refint/Dominio.dll
+/Users/danielaarsuaga/Desktop/ORT/Programacion 2/Obligatorio/Obligatorio/Dominio/obj/Debug/net8.0/Dominio.pdb
+/Users/danielaarsuaga/Desktop/ORT/Programacion 2/Obligatorio/Obligatorio/Dominio/obj/Debug/net8.0/ref/Dominio.dll

@@ -25,6 +25,7 @@ namespace Dominio
             if (string.IsNullOrEmpty(_nombre)) throw new Exception("El nombre no puede ser vacío");
             if (string.IsNullOrEmpty(_apellido)) throw new Exception("El apellido no puede ser vacío");
             if (string.IsNullOrEmpty(_email)) throw new Exception("El email no puede ser vacío");
+            if (string.IsNullOrEmpty(_contrasenia)) throw new Exception("La contraseña no puede ser vacía");
         }
 
     }

@@ -4,11 +4,13 @@ namespace Dominio
     {
         private List<Oferta> _ofertas;
         private List<OfertaSubasta> _ofertaSubastas = new List<OfertaSubasta>();
+        private Administrador _usuarioFinalizador;
 
         public Subasta(string nombre, List<Articulo> articulos, DateTime fechaPublicacion) 
             : base(nombre, Estado.ABIERTA, articulos, fechaPublicacion)// Inicializa en estado ABIERTA
         {
             _ofertas = new List<Oferta>();
+            
         }
 
         public List<Oferta> ObtenerOfertas()
@@ -16,6 +18,7 @@ namespace Dominio
             return _ofertas;
         }
 
+        //NO VA PRIMERA ENTREGA
         public void RealizarOferta(Oferta oferta)
         {
             if (estado != Estado.ABIERTA)
@@ -26,17 +29,20 @@ namespace Dominio
             oferta.Validar();  
             _ofertas.Add(oferta);
         }
-
+        
+        //NO VA PRIMERA ENTREGA
         public double CalcularPrecio()
         {
             throw new NotImplementedException();
         }
-
+        
+        //NO VA PRIMERA ENTREGA
         public void FinalizarCompra(Cliente cliente, Administrador administrador)
         {
             throw new NotImplementedException();
         }
 
+        //NO VA PRIMERA ENTREGA
         public void AltaOferta(OfertaSubasta os)
         {
             if (os == null) throw new Exception("La oferta no puede ser nula");

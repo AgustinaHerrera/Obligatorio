@@ -1,6 +1,8 @@
+using Dominio.Interfases;
+
 namespace Dominio
 {
-    public abstract class Publicacion
+    public abstract class Publicacion: IValidable
     {
         private int _id;
         private static int s_ultId = 1;
@@ -9,7 +11,6 @@ namespace Dominio
         private DateTime _fechaPublicacion;
         internal List<Articulo> _articulos;
         private Cliente _comprador;  
-        private Usuario _usuarioFinalizador;
 
         public Publicacion(string nombre, Estado estado, List<Articulo> articulos, DateTime fechaPublicacion)
         {
@@ -39,6 +40,16 @@ namespace Dominio
         {
             get { return _nombre; }
         }
-        
+
+        public override string ToString()
+        {
+            return $"ID: {Id}, Nombre: {Nombre}, Estado: {estado}, Fecha: {FechaPublicacion}";
+        }
+
+        public void Validar()
+        {
+            if (string.IsNullOrEmpty(_nombre)) throw new Exception("El nombre no puede ser vacío");
+            
+        }
     }
 }

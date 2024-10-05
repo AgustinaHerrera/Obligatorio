@@ -12,7 +12,8 @@ namespace Dominio
 
         public Articulo(string nombre, string categoria, double precioVenta)
         {
-            _id = s_ultId++;
+            _id = s_ultId;
+            s_ultId++;
             _nombre = nombre;
             _categoria = categoria;
             _precioVenta = precioVenta;

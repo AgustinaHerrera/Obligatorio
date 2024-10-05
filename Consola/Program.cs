@@ -69,9 +69,10 @@ namespace Menu
             List<Cliente> clientes = miSistema.ObtenerClientes();
             try
             {
+                if (clientes.Count == 0) throw new Exception("No se encontraron clientes");
                 foreach (Cliente c in clientes)
                 {
-                    Console.WriteLine(c.ToString());
+                    Console.WriteLine(c);
                 }
             }
             catch (Exception ex)
@@ -104,18 +105,18 @@ namespace Menu
             PressToContinue();
         }
 
-        static void AltaDeArticulos()
+        private static void AltaDeArticulos()
         {
             Console.Clear();
             CambioDeColor("OPCIÓN: Alta de artículos", ConsoleColor.Yellow);
-            Console.Write("Ingrese el nombre del artículo: ");
-            string nombre = Console.ReadLine();
-            Console.Write("Ingrese la categoría del artículo: ");
-            string categoria = Console.ReadLine();
-            Console.Write("Ingrese el precio de venta del artículo: ");
-            double precioVenta = PedirNumeros("Precio: ");
+            string nombre = PedirPalabras("Ingrese el nombre del artículo: ");
+            string categoria = PedirPalabras("Ingrese la categoría del artículo: ");
+            double precioVenta = PedirNumeros("Ingrese el precio de venta del artículo: ");
             try
             {
+                if (string.IsNullOrEmpty(nombre)) throw new Exception("El nombre no puede estar vacio");
+                if (string.IsNullOrEmpty(categoria)) throw new Exception("La categoria no puede estar vacia");
+                if (precioVenta <= 0) throw new Exception("El precio debe ser mayor a 0");
                 Articulo nuevoArticulo = new Articulo(nombre, categoria, precioVenta);
                 miSistema.AgregarArticulo(nuevoArticulo); 
                 MostrarExito("Artículo agregado correctamente.");
@@ -140,11 +141,11 @@ namespace Menu
             List<Publicacion> publicaciones = miSistema.ObtenerPublicacionesPorFecha(fechaInicio, fechaFin);
             try
             {
+                if(publicaciones.Count==0) CambioDeColor("No hay publicaciones en el rango de fechas", ConsoleColor.Red);
                 foreach (Publicacion p in publicaciones)
                 {
-                  if(p !=  null)  Console.WriteLine($"ID: {p.Id}, Nombre: {p.Nombre}, Estado: {p.estado}, Fecha: {p.FechaPublicacion}");
-                }
-                CambioDeColor("No hay publicaciones en el rango de fechas", ConsoleColor.Red) ;
+                  if(p!=null)  Console.WriteLine(p);
+                } 
             }
             catch (Exception ex)
             {
