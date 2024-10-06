@@ -44,7 +44,7 @@ namespace Dominio
         {
             get { return _nombre; }
         }
-
+        
         public override string ToString()
         {
             return $"ID: {Id}, Nombre: {Nombre}, Estado: {estado}, Fecha: {FechaPublicacion}";

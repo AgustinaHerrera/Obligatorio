@@ -54,7 +54,7 @@ namespace Menu
             CambioDeColor("**************", ConsoleColor.Cyan);
             Console.WriteLine();
             Console.WriteLine("1 - Listado de clientes");
-            Console.WriteLine("2 - Listar articulos de una categoria: ");
+            Console.WriteLine("2 - Listar articulos de una categoria");
             Console.WriteLine("3 - Alta de artículos");
             Console.WriteLine("4 - Publicaciones por fecha");
             Console.WriteLine("0 - Salir");

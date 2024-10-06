@@ -7,6 +7,11 @@ namespace Dominio
         {
         }
 
+        public int IdAdmin
+        {
+            get{ return _id; }
+        }
+        
         /* Método para cerrar una subasta
         public void CerrarSubasta(Subasta subasta, Cliente cliente)
         {

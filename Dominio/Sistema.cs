@@ -16,9 +16,9 @@ namespace Dominio
             PrecargaClientes();
             PrecargaAdministradores();
             PrecargaArticulos();
-            // PrecargaVentas();
-            // PrecargaSubastas();
-            // PrecargaOfertas();
+            PrecargaVentas();
+            PrecargaSubastas();
+            PrecargaOfertas();
         }
 
         // Artículos
@@ -97,7 +97,6 @@ namespace Dominio
             AgregarArticulo(new Articulo("Bañador de dos piezas", "Ropa", 200));
             AgregarArticulo(new Articulo("Mono de baño", "Ropa", 250));
         }
-
         
         //Clientes
         private void AgregarCliente(Cliente cliente)
@@ -145,7 +144,18 @@ namespace Dominio
             }
         }
         
+        public Cliente ObtenerClientePorId(int id)
+        {
+            foreach (Cliente c in _clientes)
+            {
         
+                if (c.Id == id) // Compara los IDs
+                {
+                    return c;
+                }
+            }
+            return null; // Si no encuentra, regresa null
+        }
 
         //Ventas
         public void AgregarPublicacion(Publicacion publicacion)
@@ -160,59 +170,73 @@ namespace Dominio
             }
         }
 
-        // private void PrecargaVentas()
-        // {
-        //      List<Articulo> articulosVenta1 = new List<Articulo> { _articulos[0], _articulos[1] }; // Camiseta y Pantalón
-        //      List<Articulo> articulosVenta2 = new List<Articulo> { _articulos[2], _articulos[3] }; // Chaqueta y Zapatos
-        //      List<Articulo> articulosVenta3 = new List<Articulo> { _articulos[4], _articulos[5] }; // Gorra y Bufanda
-        //      List<Articulo> articulosVenta4 = new List<Articulo> { _articulos[6], _articulos[7] }; // Reloj y Bolso
-        //      List<Articulo> articulosVenta5 = new List<Articulo> { _articulos[8], _articulos[9] }; // Lentes de sol y Camisa
-        //      List<Articulo> articulosVenta6 = new List<Articulo> { _articulos[10], _articulos[11] }; // Shorts y Vestido
-        //      List<Articulo> articulosVenta7 = new List<Articulo> { _articulos[12], _articulos[13] }; // Chaqueta de cuero y Botines
-        //      List<Articulo> articulosVenta8 = new List<Articulo> { _articulos[14], _articulos[15] }; // Zapatillas y Cinturón
-        //      List<Articulo> articulosVenta9 = new List<Articulo> { _articulos[16], _articulos[17] }; // Bañador y Sombrero
-        //      List<Articulo> articulosVenta10 = new List<Articulo> { _articulos[18], _articulos[19] }; // Jersey y Pijama
-        //
-        //     AgregarPublicacion(new Venta("Venta 1", articulosVenta1, true, new DateTime(2024, 09, 15)));
-        //     AgregarPublicacion(new Venta("Venta 2", articulosVenta2, true, new DateTime(2024, 09, 16)));
-        //     AgregarPublicacion(new Venta("Venta 3", articulosVenta3, true, new DateTime(2024, 09, 17)));
-        //     AgregarPublicacion(new Venta("Venta 4", articulosVenta4, true, new DateTime(2024, 09, 18)));
-        //     AgregarPublicacion(new Venta("Venta 5", articulosVenta5, true, new DateTime(2024, 09, 19)));
-        //     AgregarPublicacion(new Venta("Venta 6", articulosVenta6, true, new DateTime(2024, 09, 20)));
-        //     AgregarPublicacion(new Venta("Venta 7", articulosVenta7, true, new DateTime(2024, 09, 21)));
-        //     AgregarPublicacion(new Venta("Venta 8", articulosVenta8, true, new DateTime(2024, 09, 22)));
-        //     AgregarPublicacion(new Venta("Venta 9", articulosVenta9, true, new DateTime(2024, 09, 23)));
-        //     AgregarPublicacion(new Venta("Venta 10", articulosVenta10, true, new DateTime(2024, 09, 24)));
-        //
-        // }
-        //
-        // //Subastas
-        // private void PrecargaSubastas()
-        // {
-        //     
-        //     List<Articulo> articulosSubasta1 = new List<Articulo> { _articulos[0], _articulos[1] };
-        //     List<Articulo> articulosSubasta2 = new List<Articulo> { _articulos[2], _articulos[3] };
-        //     List<Articulo> articulosSubasta3 = new List<Articulo> { _articulos[4], _articulos[5] };
-        //     List<Articulo> articulosSubasta4 = new List<Articulo> { _articulos[6], _articulos[7] };
-        //     List<Articulo> articulosSubasta5 = new List<Articulo> { _articulos[8], _articulos[9] };
-        //     List<Articulo> articulosSubasta6 = new List<Articulo> { _articulos[0], _articulos[2] };
-        //     List<Articulo> articulosSubasta7 = new List<Articulo> { _articulos[1], _articulos[3] };
-        //     List<Articulo> articulosSubasta8 = new List<Articulo> { _articulos[4], _articulos[6] };
-        //     List<Articulo> articulosSubasta9 = new List<Articulo> { _articulos[5], _articulos[7] };
-        //     List<Articulo> articulosSubasta10 = new List<Articulo> { _articulos[8], _articulos[9] };
-        //     
-        //
-        //     AgregarPublicacion(new Subasta("Subasta 1", articulosSubasta1, new DateTime(2024, 09, 15)));
-        //     AgregarPublicacion(new Subasta("Subasta 2", articulosSubasta2, new DateTime(2024, 09, 16)));
-        //     AgregarPublicacion(new Subasta("Subasta 3", articulosSubasta3, new DateTime(2024, 09, 17)));
-        //     AgregarPublicacion(new Subasta("Subasta 4", articulosSubasta4, new DateTime(2024, 09, 18)));
-        //     AgregarPublicacion(new Subasta("Subasta 5", articulosSubasta5, new DateTime(2024, 09, 19)));
-        //     AgregarPublicacion(new Subasta("Subasta 6", articulosSubasta6, new DateTime(2024, 09, 20)));
-        //     AgregarPublicacion(new Subasta("Subasta 7", articulosSubasta7, new DateTime(2024, 09, 21)));
-        //     AgregarPublicacion(new Subasta("Subasta 8", articulosSubasta8, new DateTime(2024, 09, 22)));
-        //     AgregarPublicacion(new Subasta("Subasta 9", articulosSubasta9, new DateTime(2024, 09, 23)));
-        //     AgregarPublicacion(new Subasta("Subasta 10", articulosSubasta10, new DateTime(2024, 09, 24)));
-        // }
+        
+        private void PrecargaVentas()
+        {
+             List<Articulo> articulosVenta1 = new List<Articulo> { _articulos[0], _articulos[1] }; // Camiseta y Pantalón
+             List<Articulo> articulosVenta2 = new List<Articulo> { _articulos[2], _articulos[3] }; // Chaqueta y Zapatos
+             List<Articulo> articulosVenta3 = new List<Articulo> { _articulos[4], _articulos[5] }; // Gorra y Bufanda
+             List<Articulo> articulosVenta4 = new List<Articulo> { _articulos[6], _articulos[7] }; // Reloj y Bolso
+             List<Articulo> articulosVenta5 = new List<Articulo> { _articulos[8], _articulos[9] }; // Lentes de sol y Camisa
+             List<Articulo> articulosVenta6 = new List<Articulo> { _articulos[10], _articulos[11] }; // Shorts y Vestido
+             List<Articulo> articulosVenta7 = new List<Articulo> { _articulos[12], _articulos[13] }; // Chaqueta de cuero y Botines
+             List<Articulo> articulosVenta8 = new List<Articulo> { _articulos[14], _articulos[15] }; // Zapatillas y Cinturón
+             List<Articulo> articulosVenta9 = new List<Articulo> { _articulos[16], _articulos[17] }; // Bañador y Sombrero
+             List<Articulo> articulosVenta10 = new List<Articulo> { _articulos[18], _articulos[19] }; // Jersey y Pijama
+        
+            AgregarPublicacion(new Venta("Venta 1", articulosVenta1, true, new DateTime(2024, 09, 15), ObtenerClientePorId(0), new DateTime(2024, 09, 15), ObtenerClientePorId(0)));
+            AgregarPublicacion(new Venta("Venta 2", articulosVenta2, true, new DateTime(2024, 09, 16), ObtenerClientePorId(1), new DateTime(2024, 09, 16), ObtenerClientePorId(1)));
+            AgregarPublicacion(new Venta("Venta 3", articulosVenta3, true, new DateTime(2024, 09, 17),  ObtenerClientePorId(2), new DateTime(2024, 09, 17), ObtenerClientePorId(2)));
+            AgregarPublicacion(new Venta("Venta 4", articulosVenta4, true, new DateTime(2024, 09, 18), ObtenerClientePorId(3),new DateTime(2024, 09, 18), ObtenerClientePorId(3)));
+            AgregarPublicacion(new Venta("Venta 5", articulosVenta5, true, new DateTime(2024, 09, 19),ObtenerClientePorId(4), new DateTime(2024, 09, 19), ObtenerClientePorId(4)));
+            AgregarPublicacion(new Venta("Venta 6", articulosVenta6, true, new DateTime(2024, 09, 20),ObtenerClientePorId(5), new DateTime(2024, 09, 20), ObtenerClientePorId(5)));
+            AgregarPublicacion(new Venta("Venta 7", articulosVenta7, true, new DateTime(2024, 09, 21),ObtenerClientePorId(6), new DateTime(2024, 09, 21), ObtenerClientePorId(6)));
+            AgregarPublicacion(new Venta("Venta 8", articulosVenta8, true, new DateTime(2024, 09, 22),ObtenerClientePorId(7), new DateTime(2024, 09, 22), ObtenerClientePorId(7)));
+            AgregarPublicacion(new Venta("Venta 9", articulosVenta9, true, new DateTime(2024, 09, 23),ObtenerClientePorId(8), new DateTime(2024, 09, 23), ObtenerClientePorId(8)));
+            AgregarPublicacion(new Venta("Venta 10", articulosVenta10, true, new DateTime(2024, 09, 24),ObtenerClientePorId(9), new DateTime(2024, 09, 24), ObtenerClientePorId(9)));
+            
+        }
+        
+        public Administrador ObtenerAdministrador(int id)
+        {
+            foreach (Administrador a in _administradores)
+            {
+        
+                if (a.IdAdmin == id) // Compara los IDs
+                {
+                    return a;
+                }
+            }
+            return null; // Si no encuentra, regresa null
+        }
+        
+        //Subastas
+        private void PrecargaSubastas()
+        {
+            
+            List<Articulo> articulosSubasta1 = new List<Articulo> { _articulos[0], _articulos[1] };
+            List<Articulo> articulosSubasta2 = new List<Articulo> { _articulos[2], _articulos[3] };
+            List<Articulo> articulosSubasta3 = new List<Articulo> { _articulos[4], _articulos[5] };
+            List<Articulo> articulosSubasta4 = new List<Articulo> { _articulos[6], _articulos[7] };
+            List<Articulo> articulosSubasta5 = new List<Articulo> { _articulos[8], _articulos[9] };
+            List<Articulo> articulosSubasta6 = new List<Articulo> { _articulos[0], _articulos[2] };
+            List<Articulo> articulosSubasta7 = new List<Articulo> { _articulos[1], _articulos[3] };
+            List<Articulo> articulosSubasta8 = new List<Articulo> { _articulos[4], _articulos[6] };
+            List<Articulo> articulosSubasta9 = new List<Articulo> { _articulos[5], _articulos[7] };
+            List<Articulo> articulosSubasta10 = new List<Articulo> { _articulos[8], _articulos[9] };
+            
+        
+            AgregarPublicacion(new Subasta("Subasta 1", articulosSubasta1, new DateTime(2024, 09, 15),ObtenerClientePorId(0), new DateTime(2024, 09, 15), ObtenerAdministrador(0)));
+            AgregarPublicacion(new Subasta("Subasta 2", articulosSubasta2, new DateTime(2024, 09, 16),ObtenerClientePorId(1), new DateTime(2024, 09, 15), ObtenerAdministrador(1)));
+            AgregarPublicacion(new Subasta("Subasta 3", articulosSubasta3, new DateTime(2024, 09, 17),ObtenerClientePorId(2),new DateTime(2024, 09, 17),ObtenerAdministrador(2)));
+            AgregarPublicacion(new Subasta("Subasta 4", articulosSubasta4, new DateTime(2024, 09, 18),ObtenerClientePorId(3), new DateTime(2024, 09, 18), ObtenerAdministrador(3)));
+            AgregarPublicacion(new Subasta("Subasta 5", articulosSubasta5, new DateTime(2024, 09, 19),ObtenerClientePorId(4), new DateTime(2024, 09, 19), ObtenerAdministrador(4)));
+            AgregarPublicacion(new Subasta("Subasta 6", articulosSubasta6, new DateTime(2024, 09, 20),ObtenerClientePorId(5),new DateTime(2024, 09, 19), ObtenerAdministrador(5)));
+            AgregarPublicacion(new Subasta("Subasta 7", articulosSubasta7, new DateTime(2024, 09, 21),ObtenerClientePorId(6), new DateTime(2024, 09, 21), ObtenerAdministrador(6)));
+            AgregarPublicacion(new Subasta("Subasta 8", articulosSubasta8, new DateTime(2024, 09, 22),ObtenerClientePorId(7), new DateTime(2024, 09, 22), ObtenerAdministrador(7)));
+            AgregarPublicacion(new Subasta("Subasta 9", articulosSubasta9, new DateTime(2024, 09, 23),ObtenerClientePorId(8), new DateTime(2024, 09, 23), ObtenerAdministrador(8)));
+            AgregarPublicacion(new Subasta("Subasta 10", articulosSubasta10, new DateTime(2024, 09, 24),ObtenerClientePorId(9), new DateTime(2024, 09, 24), ObtenerAdministrador(9)));
+        }
         
         public Subasta ObtenerSubastaPorId(int id)
         {
@@ -227,8 +251,6 @@ namespace Dominio
             return null; // Si no encuentra, regresa null
         }
         
-        
-        //NO VA PARA ESTA ENTREGA
             public Oferta ObtenerOfertaPorId(int id)
         {
             Oferta buscado = null;
@@ -242,9 +264,6 @@ namespace Dominio
             return buscado;
         }
             
-            
-
-            //NO VA PARA ESTA ENTREGA
         public void AgregarOfertaASubasta(int idSubasta, int idOferta, double montoOferta)
         {
             Subasta subastaBuscada = ObtenerSubastaPorId(idSubasta);
