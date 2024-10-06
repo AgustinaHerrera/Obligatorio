@@ -35,5 +35,10 @@ namespace Dominio
             if (string.IsNullOrEmpty(_categoria)) throw new Exception("La categoría no puede ser vacía");
             if (_precioVenta <= 0) throw new Exception("El precio debe ser mayor que cero");
         }
+
+        public override string ToString()
+        {
+            return $"Id: {_id}, Nombre: {_nombre}, Categoria: {_categoria}, Precio Venta: $ {_precioVenta}";
+        }
     }
 }

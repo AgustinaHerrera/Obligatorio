@@ -20,6 +20,8 @@ namespace Dominio
             _fechaPublicacion = fechaPublicacion;
             _articulos = articulos;
             _estado = estado;
+            _comprador =comprador;
+            _fechaFinalizacion = fechaFinalizacion;
         }
 
         public Estado estado
@@ -42,7 +44,7 @@ namespace Dominio
         {
             get { return _nombre; }
         }
-
+        
         public override string ToString()
         {
             return $"ID: {Id}, Nombre: {Nombre}, Estado: {estado}, Fecha: {FechaPublicacion}";
