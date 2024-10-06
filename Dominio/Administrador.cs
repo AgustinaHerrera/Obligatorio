@@ -7,7 +7,7 @@ namespace Dominio
         {
         }
 
-        // Método para cerrar una subasta
+        /* Método para cerrar una subasta
         public void CerrarSubasta(Subasta subasta, Cliente cliente)
         {
             // Verifica si el comprador tiene saldo suficiente para realizar la compra
@@ -21,6 +21,6 @@ namespace Dominio
             subasta.FinalizarCompra(cliente, this);
             cliente.SaldoDisponible -= precioFinal; // Descuenta el saldo del comprador
         }
-        
+        */
     }
 }

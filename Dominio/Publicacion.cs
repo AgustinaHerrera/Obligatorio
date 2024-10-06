@@ -20,6 +20,8 @@ namespace Dominio
             _fechaPublicacion = fechaPublicacion;
             _articulos = articulos;
             _estado = estado;
+            _comprador =comprador;
+            _fechaFinalizacion = fechaFinalizacion;
         }
 
         public Estado estado

@@ -54,7 +54,7 @@ namespace Menu
             CambioDeColor("**************", ConsoleColor.Cyan);
             Console.WriteLine();
             Console.WriteLine("1 - Listado de clientes");
-            Console.WriteLine("2 - Categorías");
+            Console.WriteLine("2 - Listar articulos de una categoria: ");
             Console.WriteLine("3 - Alta de artículos");
             Console.WriteLine("4 - Publicaciones por fecha");
             Console.WriteLine("0 - Salir");
@@ -86,15 +86,15 @@ namespace Menu
         static void Categorias()
         {
             Console.Clear();
-            CambioDeColor("OPCIÓN: Categorías", ConsoleColor.Yellow);
-            Console.WriteLine("Mostrar categorías disponibles...");
+            CambioDeColor("OPCIÓN: Listar articulos de una categoria: ", ConsoleColor.Yellow);
+            string buscado = PedirPalabras("Ingrese el categoria: ");
 
             List<Articulo> articulos = miSistema.ObtenerArticulos();
             try
             {
                 foreach (Articulo a in articulos)
                 {
-                    Console.WriteLine($"Categoría: {a.Categoria}");
+                    if(a.Categoria.ToLower() == buscado.ToLower()) Console.WriteLine(a);
                 }
             }
             catch (Exception ex)
