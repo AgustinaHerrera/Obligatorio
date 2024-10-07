@@ -7,9 +7,9 @@ namespace Dominio
         private Cliente _cliente;
         private double _monto;
         private DateTime _fechaOferta;
-        private List<Oferta> _ofertaSubastas = new List<Oferta>();
+        private Subasta Subasta_subasta;
 
-        public Oferta(Cliente cliente, double monto)
+        public Oferta(Subasta subasta, Cliente cliente, double monto)
         {
             _id = s_ultId++;
             _cliente = cliente;
