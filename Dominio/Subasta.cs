@@ -30,25 +30,6 @@ namespace Dominio
             _ofertas.Add(oferta);
         }
         
-        //NO VA PRIMERA ENTREGA
-        public double CalcularPrecio()
-        {
-            throw new NotImplementedException();
-        }
-        
-        //NO VA PRIMERA ENTREGA
-        public void FinalizarCompra(Cliente cliente, Administrador administrador)
-        {
-            throw new NotImplementedException();
-        }
 
-        //NO VA PRIMERA ENTREGA
-        public void AltaOferta(Oferta o)
-        {
-            if (o == null) throw new Exception("La oferta no puede ser nula");
-            if (_ofertas.Contains(o)) throw new Exception("Ya existe la oferta en la subasta");
-    
-            _ofertas.Add(o); 
-        }
     }
 }

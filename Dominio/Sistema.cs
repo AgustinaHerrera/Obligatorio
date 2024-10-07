@@ -251,45 +251,17 @@ namespace Dominio
             return null; // Si no encuentra, regresa null
         }
         
-            public Oferta ObtenerOfertaPorId(int id)
+        private void AgregarOfertaASubasta(Oferta oferta)
         {
-            Oferta buscado = null;
-            int i = 0;
-            while(i < _ofertas.Count && buscado == null)
-            {
-                if (_ofertas[i].Id == id) buscado = _ofertas[i];
-                i++;
-            }
-
-            return buscado;
+            if (oferta == null) throw new Exception("La oferta no puede ser nula");
+            oferta.Validar();
+            _ofertas.Add(oferta);
         }
-            
-        public void AgregarOfertaASubasta(int idSubasta, int idOferta, double montoOferta)
-        {
-            Subasta subastaBuscada = ObtenerSubastaPorId(idSubasta);
-            if (subastaBuscada == null) throw new Exception("El id de subasta no corresponde a ninguna subasta del sistema");
-
-            Oferta ofertaBuscada = ObtenerOfertaPorId(idOferta);
-    
-            if (ofertaBuscada == null) throw new Exception("La oferta no se encontró");
-            
-            Oferta o = new Oferta(ofertaBuscada.Cliente, montoOferta);
-            subastaBuscada.AltaOferta(o); 
-        }
-
         private void PrecargaOfertas()
         {
-            // Crear las ofertas
-            Oferta oferta1 = new Oferta(_clientes[0], 100);
-            Oferta oferta2 = new Oferta(_clientes[2], 150);
-    
-            // Agregar las ofertas al sistema antes de usarlas
-            _ofertas.Add(oferta1);
-            _ofertas.Add(oferta2);
-    
             // Agregar las ofertas a las subastas
-            AgregarOfertaASubasta(12, oferta1.Id, oferta1.Monto); 
-            AgregarOfertaASubasta(14, oferta2.Id, oferta2.Monto);
+            AgregarOfertaASubasta(new Oferta(ObtenerSubastaPorId(12), ObtenerClientePorId(01),100)); 
+            AgregarOfertaASubasta(new Oferta(ObtenerSubastaPorId(14), ObtenerClientePorId(02),200));
         }
 
         public List<Publicacion> ObtenerPublicacionesPorFecha(DateTime inicio, DateTime fin)

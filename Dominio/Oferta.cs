@@ -8,13 +8,15 @@ namespace Dominio
         private double _monto;
         private DateTime _fechaOferta;
         private List<Oferta> _ofertaSubastas = new List<Oferta>();
+        private Subasta _subasta;
 
-        public Oferta(Cliente cliente, double monto)
+        public Oferta(Subasta subasta, Cliente cliente, double monto)
         {
             _id = s_ultId++;
             _cliente = cliente;
             _monto = monto;
             _fechaOferta = DateTime.Now;
+            _subasta = subasta;
         }
 
         public double Monto
