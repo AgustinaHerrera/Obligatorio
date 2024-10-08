@@ -10,7 +10,13 @@ namespace Dominio
         {
             _ofertaRelampago = ofertaRelampago;
         }
-        
+
+        public override string ToString()
+        {
+            return $"ID: {Id}, Nombre: {Nombre}, Estado: {estado}, Fecha: {FechaPublicacion}";
+        }
+
+
 //NO VA PARA LA PRIMER ENTREGA
         public virtual double CalcularPrecio()
         {

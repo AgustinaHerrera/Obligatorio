@@ -255,12 +255,14 @@ namespace Dominio
         {
             if (oferta == null) throw new Exception("La oferta no puede ser nula");
             oferta.Validar();
+            oferta.Subasta.AgregarOferta(oferta);
             _ofertas.Add(oferta);
         }
         private void PrecargaOfertas()
         {
             // Agregar las ofertas a las subastas
             AgregarOfertaASubasta(new Oferta(ObtenerSubastaPorId(12), ObtenerClientePorId(01),100)); 
+            AgregarOfertaASubasta(new Oferta(ObtenerSubastaPorId(12), ObtenerClientePorId(03),400)); 
             AgregarOfertaASubasta(new Oferta(ObtenerSubastaPorId(14), ObtenerClientePorId(02),200));
         }
 

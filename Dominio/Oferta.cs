@@ -7,7 +7,6 @@ namespace Dominio
         private Cliente _cliente;
         private double _monto;
         private DateTime _fechaOferta;
-        private List<Oferta> _ofertaSubastas = new List<Oferta>();
         private Subasta _subasta;
 
         public Oferta(Subasta subasta, Cliente cliente, double monto)
@@ -29,8 +28,21 @@ namespace Dominio
             get { return _id; }
         }
 
-        public Cliente Cliente { get; set; }
+        public Cliente cliente
+        {
+            get {return _cliente;}
+            
+        }
 
+        public Subasta Subasta
+        {
+            get { return _subasta; }
+        }
+
+        public override string ToString()
+        {
+            return $"Cliente: {_cliente.Nombre}, Oferta: {Monto}";
+        }
         public void Validar()
         {
             if (_monto <= 0) throw new Exception("El monto debe ser mayor que cero.");

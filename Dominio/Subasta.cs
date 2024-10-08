@@ -17,7 +17,22 @@ namespace Dominio
         {
             return _ofertas;
         }
+        
+        public override string ToString()
+        {
+            string ofertas = _ofertas.Count > 0 
+                ? string.Join(" / ", _ofertas) // Muestra las ofertas separadas por una "/"
+                : "No hay ofertas."; // Si no hay ofertas muestra esta línea
 
+            return $"ID: {Id}, Nombre: {Nombre}, Estado: {estado}, Fecha: {FechaPublicacion}, Ofertas: {ofertas}";
+        }
+
+        // Agrega la oferta a la lista de ofertas
+        public void AgregarOferta(Oferta oferta)
+        {
+            _ofertas.Add(oferta);
+        }
+        
         //NO VA PRIMERA ENTREGA
         public void RealizarOferta(Oferta oferta)
         {
